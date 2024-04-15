@@ -8,7 +8,7 @@ contract Example {
     uint256 b = 22; // alias: uint
 
     int8 c = 127; // -128 -> 127
-    int256 d = -55; // alias: int256
+    int256 d = -55; // alias: int
 
     bool myCondition = true;
 
@@ -20,4 +20,20 @@ contract Example {
     }
 
     Choice choice = Choice.Up;
+
+    constructor() {
+        console.logInt(type(int8).min);
+        console.logInt(type(int8).max);
+
+        if (myCondition) {
+            console.log("yay");
+        }
+
+        if (choice == Choice.Up) {
+            console.log("up");
+        }
+        if (choice == Choice.Down) {
+            console.log("down");
+        }
+    }
 }
