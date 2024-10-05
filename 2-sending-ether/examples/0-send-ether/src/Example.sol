@@ -6,17 +6,12 @@ import "forge-std/console.sol";
 contract A {
     address b;
 
-    constructor(address _b) payable {
+    constructor(address _b) {
         b = _b;
-    }
-
-    function payHalf() external {
-        uint256 balance = address(this).balance;
-        (bool success,) = b.call{value: balance / 2}("");
-        require(success);
+        console.log(b);
     }
 }
 
 contract B {
-    receive() external payable {}
+
 }
